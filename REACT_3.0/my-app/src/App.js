@@ -20,7 +20,7 @@ import LifecycleA from './components/LifecycleA'
 function App() {
   return (
     <div className="App">
-      <LifecycleA />
+      <Welcome />
       {/* <LifecycleA /> */}
       {/* <h1 className='error'>Error</h1>
       <h1 className={stylesModule.success}>Success</h1>
