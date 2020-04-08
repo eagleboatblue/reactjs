@@ -4,6 +4,7 @@
 * [Online Documents](https://create-react-app.dev/docs/getting-started)
 * [Home Page](https://reactjs.org/)
 * [Getting started](https://reactjs.org/docs/getting-started.html)
+* [Call a Flask API in React](https://www.youtube.com/watch?v=06pWsB_hoD4&t=303s)
 
 ## Start from scratch
 ```

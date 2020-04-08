@@ -9,22 +9,24 @@ BOOKS = [
         'title': 'On the Road',
         'author': 'Jack Kerouac',
         'read': True,
-        'price': '19.99'
+        'price': '19.99',
+        'rating':3
     },
     {
         'id': uuid.uuid4().hex,
         'title': 'Harry Potter and the Philosopher\'s Stone',
         'author': 'J. K. Rowling',
         'read': False,
-        'price': '9.99'      
+        'price': '9.99',
+        'rating':5      
     },
     {
         'id': uuid.uuid4().hex,
         'title': 'Green Eggs and Ham',
         'author': 'Dr. Seuss',
         'read': True,
-        'price': '4.99'
-
+        'price': '4.99',
+        'rating':1
     }
 ]
 
@@ -55,6 +57,7 @@ def all_books():
             'author': post_data.get('author'),
             'read': post_data.get('read'),
             'price': post_data.get('price'),
+            'rating':post_data.get('rating')
         })
         response_object['message'] = 'Book added!'
     else:
