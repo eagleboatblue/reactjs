@@ -16,29 +16,15 @@ import Inline from './components/Inline'
 import './appStyles.css'
 import stylesModule from './appStyles.module.css'
 import LifecycleA from './components/LifecycleA'
+import PureComp from './components/PureComp'
+import ParentComp from './components/ParentComp'
+import RefsDemo from './components/RefsDemo'
 
 function App() {
   return (
     <div className="App">
-      <LifecycleA />
-      {/* <LifecycleA /> */}
-      {/* <h1 className='error'>Error</h1>
-      <h1 className={stylesModule.success}>Success</h1>
-       <Inline />  */}
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <RefsDemo />
+      
     </div>
   );
 }
