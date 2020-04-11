@@ -1,16 +1,20 @@
 import React from 'react';
 import {List, Header, Rating} from 'semantic-ui-react';
+import * as ReactBootStrape from 'react-bootstrap';
 
 export const Books = ({books}) =>{
     return (
         <List>
             {books.map(book => {
                 return(
+                    <ReactBootStrape.Table border="1">
                     <List.Item key={book.title}>
-                        <Header>{book.title}</Header>
-                        <Rating maxRating={5}>{book.rating} </Rating>
-                        ${book.price}
+                    <tr>
+                        <td>{book.title}</td>
+                        <td>${book.price}</td>
+                    </tr>
                     </List.Item>
+                    </ReactBootStrape.Table>
                 )
             })}
         </List>
