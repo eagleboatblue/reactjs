@@ -18,15 +18,10 @@ import stylesModule from './appStyles.module.css'
 import LifecycleA from './components/LifecycleA'
 import PureComp from './components/PureComp'
 import ParentComp from './components/ParentComp'
-import RefsDemo from './components/RefsDemo'
 
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      <RefsDemo />
-      
-=======
       <Welcome />
       {/* <LifecycleA /> */}
       {/* <h1 className='error'>Error</h1>
@@ -46,7 +41,6 @@ function App() {
           Learn React
         </a>
       </header> */}
->>>>>>> a69e2646e96dba8f8bacb7edb0f860796f752d20
     </div>
   );
 }
