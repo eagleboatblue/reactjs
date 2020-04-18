@@ -1,7 +1,7 @@
 import uuid
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-
+import json
 
 BOOKS = [
     {
@@ -31,7 +31,7 @@ BOOKS = [
 ]
 
 # configuration
-DEBUG = True
+#DEBUG = True
 
 # instantiate the app
 app = Flask(__name__)
@@ -45,26 +45,11 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def ping_pong():
     return jsonify('pong!')
 
-
-@app.route('/books', methods=['GET', 'POST'])
+@app.route('/books', methods=['GET'])
 def all_books():
     response_object = {'status': 'success'}
-    if request.method == 'POST':
-        post_data = request.get_json()
-        BOOKS.append({
-            'id': uuid.uuid4().hex,
-            'title': post_data.get('title'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read'),
-            'price': post_data.get('price'),
-            'rating':post_data.get('rating')
-        })
-        response_object['message'] = 'Book added!'
-    else:
-        response_object['books'] = BOOKS
+    response_object['books'] = BOOKS
     return jsonify(response_object)
-
-
     
 if __name__ == '__main__':
-  app.run()
+  app.run(host="localhost", port=5000)
