@@ -18,7 +18,7 @@ def ping_pong():
 @app.route('/books', methods=['GET'])
 def all_books():
     response_object = {'status': 'success'}
-    response_object = BOOKS
+    response_object['books'] = BOOKS
     return jsonify(response_object)
     
 if __name__ == '__main__':
