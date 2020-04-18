@@ -23,3 +23,8 @@ app.run (host = "10.100.100.10", port = 9566)
 if __name__ == '__main__':
   app.run(port=9566)
 ```
+
+## Install multiple packages with pip: -r requirements.txt
+```
+pip install -r requirements.txt
+```
