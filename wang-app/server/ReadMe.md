@@ -2,7 +2,7 @@
 
 ## to start the server
 ```bash
-ce server
+cd server
 source stripe/bin/activate
 python app.py
 ```

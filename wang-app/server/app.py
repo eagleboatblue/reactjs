@@ -1,7 +1,6 @@
 import uuid
 
 from flask import Flask, jsonify, request
-from flask_cors import CORS
 
 
 BOOKS = [
@@ -36,13 +35,11 @@ DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# enable CORS
-CORS(app, resources={r'/*': {'origins': '*'}})
 
 # sanity check route
 @app.route('/ping', methods=['GET'])
 def ping_pong():
-    return jsonify('pong!')
+    return '<html><body><h1>pong!</h1></body></html>'
 
 
 @app.route('/books', methods=['GET'])
@@ -52,4 +49,4 @@ def all_books():
     return jsonify(response_object)
     
 if __name__ == '__main__':
-  app.run()
+  app.run(host="192.168.1.13", port=80)

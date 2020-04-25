@@ -16,6 +16,7 @@ function App() {
     return(
       <tr align="left" key={id}>
         <td>{book.title}</td>
+        <td>{book.author}</td>
         <td>${book.price}</td>
       </tr>
     )
@@ -23,10 +24,11 @@ function App() {
 
   return (
     <div className="App">
-    <font color="darkblue" size="3">Book List</font>
+    <font color="darkblue" size="3">华夏中文学校-图书列表</font>
       <ReactBootStrape.Table striped bordered hover>
         <thead>
-          <th bgcolor="lightblue">Title</th>
+        <th bgcolor="lightblue">Title</th>
+        <th bgcolor="lightblue">Author</th>
           <th bgcolor="lightblue">Price</th>
         </thead>
         <tbody>

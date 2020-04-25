@@ -1,8 +1,13 @@
 from flask import Flask, jsonify, request
 import json
+import bookdb
 
-f = open('books.json')
-BOOKS = json.load(f)
+# def getBooks():
+#     f = open('books.json')
+#     books = json.load(f)
+#     return books
+
+#BOOKS = bookdb.getBooks()
 
 # configuration
 DEBUG = True
@@ -18,7 +23,9 @@ def ping_pong():
 @app.route('/books', methods=['GET'])
 def all_books():
     response_object = {'status': 'success'}
-    response_object['books'] = BOOKS
+    books = bookdb.getBooks()
+    print(books)
+    response_object['books'] = books
     return jsonify(response_object)
     
 if __name__ == '__main__':
