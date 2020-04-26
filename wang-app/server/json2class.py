@@ -1,5 +1,5 @@
 import json
-from book2 import *
+from book import *
 
 f = open('books.json')
 
@@ -11,6 +11,6 @@ for i in data:
 for i in books:
      print(i)   
 
-total = totalPrice(books)
-print("Total price is $%f" %total)
+# total = totalPrice(books)
+# print("Total price is $%f" %total)
 f.close()

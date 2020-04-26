@@ -5,8 +5,17 @@ import json
 def getBookDB():
     client = MongoClient('mongodb://localhost:27017')
     db = client['test-database']
-    books = db.books
-    return books
+    bookdb = db.books
+    return bookdb
+
+def getBooks():
+    bookdb = getBookDB()
+    result = bookdb.find()
+    bookList = []
+    for book in result:
+        book.pop('_id',None)
+        bookList.append(book)
+    return bookList
 
 all_books = [
     {
@@ -41,20 +50,11 @@ def addBooks(all_books):
     for id in results.inserted_ids:
         print("Books Added. The course Id is", str(id))
 
-def getBooks():
-    books = getBookDB()
-    result = books.find()
-    bookList = []
-    for book in result:
-        book.pop('_id',None)
-        bookList.append(book)
-    return bookList
 
-def test():
+if __name__ == '__main__':
     books = getBooks()
-    print(books)
-    # for book in books:
+    for book in books:
+        print(book)
     #     print("book found with id =", book['id'])
 
-#test()
 #addBooks(all_books)

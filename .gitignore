@@ -10,6 +10,7 @@
 
 # /books server
 stripe/
+env/
 eb-flask/
 # production
 /build
