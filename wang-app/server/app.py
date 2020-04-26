@@ -47,4 +47,6 @@ def all_books():
     response_object['books'] = BOOKS
     return jsonify(response_object)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
