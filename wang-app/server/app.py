@@ -1,25 +1,24 @@
-import uuid
-
+#import uuid
 from flask import Flask, jsonify, request
 
 
 BOOKS = [
     {
-        'id': uuid.uuid4().hex,
+        '_id': '12345',
         'title': 'On the Road',
         'author': 'Jack Kerouac',
         'read': True,
         'price': '19.99'
     },
     {
-        'id': uuid.uuid4().hex,
+        '_id':'23456',
         'title': 'Harry Potter and the Philosopher\'s Stone',
         'author': 'J. K. Rowling',
         'read': False,
         'price': '9.99'      
     },
     {
-        'id': uuid.uuid4().hex,
+        '_id': '34567',
         'title': 'Green Eggs and Ham',
         'author': 'Dr. Seuss',
         'read': True,
@@ -29,7 +28,7 @@ BOOKS = [
 ]
 
 # configuration
-DEBUG = True
+#DEBUG = True
 
 # instantiate the app
 app = Flask(__name__)
@@ -42,11 +41,10 @@ def ping_pong():
     return '<html><body><h1>pong!</h1></body></html>'
 
 
-@app.route('/books', methods=['GET'])
+@app.route('/', methods=['GET'])
 def all_books():
     response_object = {'status': 'success'}
     response_object['books'] = BOOKS
     return jsonify(response_object)
-    
-if __name__ == '__main__':
-  app.run(host="192.168.1.13", port=80)
+
+app.run(debug=True)

@@ -36,14 +36,13 @@ all_books = [
 ]
 
 def addBooks(all_books):
+    books = getBookDB()
     results = books.insert_many(all_books)
     for id in results.inserted_ids:
         print("Books Added. The course Id is", str(id))
 
 def getBooks():
-    client = MongoClient('mongodb://localhost:27017')
-    db = client['test-database']
-    books = db.books
+    books = getBookDB()
     result = books.find()
     bookList = []
     for book in result:
@@ -58,3 +57,4 @@ def test():
     #     print("book found with id =", book['id'])
 
 #test()
+#addBooks(all_books)
