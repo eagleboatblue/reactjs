@@ -16,6 +16,15 @@ python app.py
 * [Call a Flask API in React](https://www.youtube.com/watch?v=06pWsB_hoD4&t=303s)
 * [JSON: JavaScript Object Notation](https://www.youtube.com/watch?v=iiADhChRriM)
 
+## Install NodeJS & npm on windows 10
+[nodejs.org/en/](https://nodejs.org/en/)
+![download page](npmDownload.png)
+```
+node --version
+npm --version
+npm install -g create-react-app
+```
+
 ## Start from scratch
 ```
 sudo npx create-react-app wang-app
