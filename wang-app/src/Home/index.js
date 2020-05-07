@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "./index.css";
 
 const home = (props) => {
   return (
-    <div>Home</div>
+    <div className="title">Home</div>
   )
 };
 
