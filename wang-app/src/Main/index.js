@@ -8,6 +8,7 @@ class Main extends Component {
    return (
      <Router>
          <Switch>
+            <Route exact path="/" component={Home}/>
            <Route path="/home" component={Home} />
          </Switch>
      </Router>
