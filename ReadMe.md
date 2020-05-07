@@ -10,6 +10,7 @@ python app.py
 ![books-json.png](books-json.png)
 
 ## References
+* [Build a Simple CRUD App with Python, Flask, and React](https://developer.okta.com/blog/2018/12/20/crud-app-with-python-flask-react)
 * [Online Documents](https://create-react-app.dev/docs/getting-started)
 * [Home Page](https://reactjs.org/)
 * [Getting started](https://reactjs.org/docs/getting-started.html)
