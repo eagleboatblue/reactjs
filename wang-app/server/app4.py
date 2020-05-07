@@ -1,19 +1,38 @@
 from flask import Flask, jsonify, request
 import json
-import bookdb
+from flask_cors import CORS
+import bookdb 
 
-# def getBooks():
-#     f = open('books.json')
-#     books = json.load(f)
-#     return books
-
-#BOOKS = bookdb.getBooks()
+BOOKS = [
+    {
+        '_id': '12345',
+        'title': 'On the Road',
+        'author': "Jack's Kerouac",
+        'read': True,
+        'price': 19.99
+    },
+    {
+        '_id':'23456',
+        'title': 'Harry Potter and the Philosopher\'s Stone',
+        'author': 'J. K. Rowling',
+        'read': False,
+        'price': '9.99'      
+    },
+    {
+        '_id': '34567',
+        'title': 'Green Eggs and Ham',
+        'author': 'Dr. Seuss',
+        'read': True,
+        'price': '4.99'
+    }
+]
 
 # configuration
 DEBUG = True
 
 # instantiate the app
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(__name__)
 
 @app.route('/ping', methods=['GET'])

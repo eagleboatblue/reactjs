@@ -67,4 +67,6 @@ add oneline in package.json
 install react bootstrap
 ```bash
 npm install react-bootstrap bootstrap
+npm i history
+npm i react-router-dom
 ```
