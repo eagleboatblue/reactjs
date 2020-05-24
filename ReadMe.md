@@ -6,7 +6,7 @@ cd server
 source stripe/bin/activate
 python app.py
 ```
-[enter 'http://localhost:5000/books](http://localhost:5000/books)
+[enter 'http://localhost:5000/books](http://localhost:5000/books
 ![books-json.png](books-json.png)
 
 ## References
