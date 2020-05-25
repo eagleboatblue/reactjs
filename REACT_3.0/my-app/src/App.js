@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greet from './components/Greet'
@@ -22,7 +22,7 @@ import ParentComp from './components/ParentComp'
 function App() {
   return (
     <div className="App">
-      <Welcome />
+      <ParentComp />
       {/* <LifecycleA /> */}
       {/* <h1 className='error'>Error</h1>
       <h1 className={stylesModule.success}>Success</h1>
