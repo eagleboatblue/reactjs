@@ -41,7 +41,7 @@ def ping_pong():
     return '<html><body><h1>pong!</h1></body></html>'
 
 
-@app.route('/', methods=['GET'])
+@app.route('/books', methods=['GET'])
 def all_books():
     response_object = {'status': 'success'}
     response_object['books'] = BOOKS
