@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import './App.css';
 import './appStyles.css'
 import BooksControl from './components/BooksControl'
