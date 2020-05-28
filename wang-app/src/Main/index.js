@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
-import BookComp from '../components/BookComp'
+import App from '../App';
 
 class Main extends Component {
  render() {
    return (
      <Router>
          <Switch>
-           <Route path="/" component={BookComp} />
+           <Route path="/" component={App} />
          </Switch>
      </Router>
    );

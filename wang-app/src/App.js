@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { PureComponent } from 'react';
 import './App.css';
-import * as ReactBootStrape from 'react-bootstrap';
-import BookComp from './components/BookComp'
+import './appStyles.css'
+import BooksControl from './components/BooksControl'
 
 function App() {
   return (
     <div className="App">
-      
+      <BooksControl />
     </div>
   );
 }
+
 export default App;
