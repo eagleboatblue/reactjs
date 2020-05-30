@@ -22,7 +22,7 @@ import ParentComp from './components/ParentComp'
 function App() {
   return (
     <div className="App">
-      <ParentComp />
+      <ClassClick />
       {/* <LifecycleA /> */}
       {/* <h1 className='error'>Error</h1>
       <h1 className={stylesModule.success}>Success</h1>
