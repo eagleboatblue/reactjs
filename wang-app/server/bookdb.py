@@ -44,6 +44,16 @@ all_books = [
     }
 ]
 
+def create(book):
+    db = getBookDB()
+    result = db.insert_one(book)
+    return result.inserted_id
+    
+def delete(book_id):
+    db = getBookDB()
+    result = db.find_one_and_delete({'_id':book_id})
+    return book_id
+    
 def addBooks(all_books):
     books = getBookDB()
     results = books.insert_many(all_books)

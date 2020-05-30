@@ -2,30 +2,7 @@ from flask import Flask, jsonify, request
 import json
 from flask_cors import CORS
 import bookdb 
-
-BOOKS = [
-    {
-        '_id': '12345',
-        'title': 'On the Road',
-        'author': "Jack's Kerouac",
-        'read': True,
-        'price': 19.99
-    },
-    {
-        '_id':'23456',
-        'title': 'Harry Potter and the Philosopher\'s Stone',
-        'author': 'J. K. Rowling',
-        'read': False,
-        'price': '9.99'      
-    },
-    {
-        '_id': '34567',
-        'title': 'Green Eggs and Ham',
-        'author': 'Dr. Seuss',
-        'read': True,
-        'price': '4.99'
-    }
-]
+import uuid
 
 # configuration
 DEBUG = True
@@ -47,5 +24,45 @@ def all_books():
     response_object['books'] = books
     return jsonify(response_object)
     
+@app.route('/books', methods=['POST'])
+def create_book():
+    response_object = {'status': 'success'}
+    post_data = request.get_json()
+    book = {
+        '_id': uuid.uuid4().hex,
+        'title': post_data.get('title'),
+        'author': post_data.get('author'),
+        'read': post_data.get('read'),
+        'price': post_data.get('price'),
+    }
+    id = bookdb.create(book)
+    response_object['message'] = 'Book added!'
+    return jsonify(response_object)
+
+@app.route('/books/<book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    response_object = {'status': 'success'}
+    post_data = request.get_json()
+    id = bookdb.delete(book_id)
+    response_object['message'] = 'Book deleted!'
+    return jsonify(response_object)
+
+@app.route('/books/<book_id>', methods=['PUT'])
+def update_book(book_id):
+    response_object = {'status': 'success'}
+    post_data = request.get_json()
+    id = bookdb.delete(book_id)
+    post_data = request.get_json()
+    book = {
+        '_id': uuid.uuid4().hex,
+        'title': post_data.get('title'),
+        'author': post_data.get('author'),
+        'read': post_data.get('read'),
+        'price': post_data.get('price'),
+    }
+    id = bookdb.create(book)
+    response_object['message'] = 'Book updated!'
+    return jsonify(response_object)
+
 if __name__ == '__main__':
     app.run(host="localhost", port=5000)
