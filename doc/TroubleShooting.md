@@ -4,3 +4,8 @@ lack node_modules, should run
 npm install
 ```  
 
+## Pay attention on settings.json
+```
+In .vscode folder
+"python.pythonPath": "/_prectise/reactjs/wang-app/server/env/bin/python3",
+```
