@@ -1,12 +1,10 @@
 import React from 'react';
-import './App.css';
-import './appStyles.css'
-import BooksControl from './components/BooksControl'
+import BookManager from './components/BookManager'
 
 function App() {
   return (
     <div className="App">
-      <BooksControl />
+      <BookManager />
     </div>
   );
 }
