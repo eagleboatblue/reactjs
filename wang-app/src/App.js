@@ -1,5 +1,7 @@
 import React from 'react';
 import BookManager from './components/BookManager'
+import BooksControl from './components/BooksControl'
+import BookComp from './components/BookComp'
 
 function App() {
   return (

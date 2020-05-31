@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import json
+import uuid
 
 def getBookDB():
     client = MongoClient('mongodb://localhost:27017')
@@ -19,7 +20,7 @@ def getBooks():
 
 all_books = [
     {
-        "id": "12345",
+        "_id": uuid.uuid4().hex,
         "title": "On the Road",
         "author": "Jack Kerouac",
         "read": True,
@@ -27,7 +28,7 @@ all_books = [
         "rating": 3
     },
     {
-        "id": "67890",
+        "_id": uuid.uuid4().hex,
         "title": "Harry Potter and the Philosopher's Stone",
         "author": "J. K. Rowling",
         "read": False,
@@ -35,7 +36,7 @@ all_books = [
         "rating": 5
     },
     {
-        "id": "23456",
+        "_id": uuid.uuid4().hex,
         "title": "Green Eggs and Ham",
         "author": "Dr. Seuss",
         "read": True,
@@ -61,10 +62,10 @@ def addBooks(all_books):
         print("Books Added. The course Id is", str(id))
 
 
-if __name__ == '__main__':
-    books = getBooks()
-    for book in books:
-        print(book)
+#   if __name__ == '__main__':
+    # books = getBooks()
+    # for book in books:
+    #     print(book)
     #     print("book found with id =", book['id'])
 
-#addBooks(all_books)
+addBooks(all_books)
