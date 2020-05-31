@@ -1,15 +1,11 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import AddBookForm from './forms/AddBookForm'
 import EditBookForm from './forms/EditBookForm'
 import BookTable from './tables/BookTable'
 
 const BookManager = () => {
 	// Data
-	const booksData = [
-		{ id: 1, title: 'How to running', author: 'floppydiskette', price: '99.30' },
-		{ id: 2, title: 'War II', author: 'siliconeidolon', price: '52.99'  },
-		{ id: 3, title: 'Cooking skillset', author: 'benisphere', price: '9.60'  },
-	]
+	const booksData = []
 
 	const initialFormState = { id: null, title: '', author: '', price: '' }
 
@@ -17,6 +13,13 @@ const BookManager = () => {
 	const [ books, setBooks ] = useState(booksData)
 	const [ currentBook, setCurrentBook ] = useState(initialFormState)
 	const [ editing, setEditing ] = useState(false)
+
+	useEffect(() => {
+		fetch('/books').then(response => 
+		  response.json().then(data => {
+		  setBooks(data.books);
+		}))
+	  }, []);
 
 	// CRUD operations
 	const addBook = book => {
