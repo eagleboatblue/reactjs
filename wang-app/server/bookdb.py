@@ -62,9 +62,9 @@ def addBooks(all_books):
 
 
 if __name__ == '__main__':
-    books = getBooks()
-    for book in books:
-        print(book)
+    # books = getBooks()
+    # for book in books:
+    #     print(book)
     #     print("book found with id =", book['id'])
 
-#addBooks(all_books)
+    addBooks(all_books)

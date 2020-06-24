@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import './appStyles.css'
-import BooksControl from './components/BooksControl'
+import BookComp from './components/BookComp'
 
 function App() {
   return (
     <div className="App">
-      <BooksControl />
+      <BookComp />
     </div>
   );
 }
