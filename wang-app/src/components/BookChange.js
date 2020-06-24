@@ -14,6 +14,7 @@ class BookChange extends Component {
                     <br/>
                     price : {this.props.price}
                     <br/>
+                    <button onClick={this.props.delete}>Update</button>
                     <button onClick={this.props.delete}>Delete</button>
                     <hr/>
                 </li>
