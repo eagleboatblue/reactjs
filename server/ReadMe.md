@@ -3,7 +3,7 @@
 ## to start the server
 ```bash
 cd server
-source stripe/bin/activate
+source evn/bin/activate
 python app.py
 ```
 [Get books in json format](http://localhost:5000/books)

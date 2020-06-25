@@ -62,18 +62,10 @@ def addBooks(all_books):
         print("Books Added. The course Id is", str(id))
 
 
-<<<<<<< HEAD
 if __name__ == '__main__':
-=======
-#   if __name__ == '__main__':
->>>>>>> c80485b6ff654b0ae3c02de1092f9e6533fe8c5e
     # books = getBooks()
     # for book in books:
     #     print(book)
     #     print("book found with id =", book['id'])
 
-<<<<<<< HEAD
     addBooks(all_books)
-=======
-addBooks(all_books)
->>>>>>> c80485b6ff654b0ae3c02de1092f9e6533fe8c5e
