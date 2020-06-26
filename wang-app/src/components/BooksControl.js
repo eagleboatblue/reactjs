@@ -61,9 +61,9 @@ export default class BooksControl extends Component {
                 <font color="darkblue" size="3">华夏中文学校-图书列表</font>
                 <br></br>
                 <button onClick={this.addBook}>Add</button>
-                <input type="text" name="Title" onBlur = {this.setTitle} />
-                <input type="text" name="Author" onBlur = {this.setAuthor} />
-                <input type="text" name="Price" onBlur = {this.setPrice} />
+                <input type="text" placeholder="Enter Title" name="Title" onBlur = {this.setTitle} />
+                <input type="text" placeholder="Enter Author" name="Author" onBlur = {this.setAuthor} />
+                <input type="text" placeholder="Enter Price" name="Price" onBlur = {this.setPrice} />
                 <ul>
                 {
                     this.state.bookArray.map((post, index) => {
