@@ -4,7 +4,7 @@
 ```
 cd server
 source stripe/bin/activate
-python app.py
+python app4.py
 ```
 [enter 'http://localhost:5000/books](http://localhost:5000/books
 ![books-json.png](books-json.png)
@@ -18,13 +18,16 @@ python app.py
 * [JSON: JavaScript Object Notation](https://www.youtube.com/watch?v=iiADhChRriM)
 
 ## Install NodeJS & npm on windows 10
-[nodejs.org/en/](https://nodejs.org/en/)
+[nodejs.org/en/](https://nodejs.org/en/download/)
 ![download page](npmDownload.png)
 ```
 node --version
 npm --version
 npm install -g create-react-app
+create-react-app --version
 ```
+Google Search: install reactjs on windows 10
+[Step by step](https://www.liquidweb.com/kb/install-react-js-windows/)
 
 ## Start from scratch
 ```
