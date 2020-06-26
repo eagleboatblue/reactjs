@@ -29,7 +29,7 @@ def ping_pong():
 def all_books():
     response_object = {'status': 'success'}
     books = db.getBooks()
-    print(books)
+#    print(books)
     response_object['books'] = books
     return jsonify(response_object)
     
