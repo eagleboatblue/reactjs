@@ -8,7 +8,7 @@ Supported services:
 """
 from flask import Flask, jsonify, request
 import json
-# from flask_cors import CORS
+from flask_cors import CORS
 from bookdb import * 
 import uuid
 
@@ -17,7 +17,7 @@ DEBUG = True
 
 # instantiate the app
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 app.config.from_object(__name__)
 db = BookDB('mydb','mongodb://localhost:27017')
 
@@ -43,6 +43,7 @@ def create_book():
         'author': post_data.get('author'),
         'read': post_data.get('read'),
         'price': post_data.get('price'),
+        'rating':post_data.get('rating')
     }
     id = db.create(book)
     response_object['message'] = 'Book added!'

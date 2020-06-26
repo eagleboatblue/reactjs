@@ -12,9 +12,9 @@ function BookComp() {
     }))
   }, []);
 
-  const renderBook = (book, id) =>{
+  const renderBook = (book, _id) =>{
     return(
-      <tr align="left" key={id}>
+      <tr align="left" key={_id}>
         <td>{book.title}</td>
         <td>{book.author}</td>
         <td>${book.price}</td>

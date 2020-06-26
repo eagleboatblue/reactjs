@@ -23,7 +23,8 @@ const BookManager = () => {
 
 	// CRUD operations
 	const addBook = book => {
-		book.id = books.length + 1
+		// book.id = books.length + 1
+
 		setBooks([ ...books, book ])
 	}
 
@@ -45,7 +46,7 @@ const BookManager = () => {
 		setCurrentBook({ id: book.id, title: book.title, author: book.author, price: book.price })
 	}
 
-	return (
+	  return (
 		<div className="container">
 			<h1>华夏中文学校-图书列表管理</h1>
 			<div className="flex-row">
