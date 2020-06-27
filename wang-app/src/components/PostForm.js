@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import axios from 'axios'
+import BookComp from './BookComp'
 
 class PostForm extends Component {
 
@@ -10,43 +11,52 @@ class PostForm extends Component {
             title: '',
             author: '',
             price: 0,
-            rating:0,
-            read:false
+            rating: 0,
+            read: false
         }
     }
 
     changeHandler = (e) => {
-        this.setState({[e.target.name]:e.target.value})
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     submitHandler = (e) => {
         e.preventDefault()
         console.log(this.state)
-        axios.post("http://localhost:5000/books",this.state)
+        axios.post("http://localhost:5000/books", this.state)
             .then(response => {
-               console.log(response)
+                console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
     }
 
+
     render() {
         const { title, author, price } = this.state
         return (
-            <div>
+            <div  className="flex-row">
                 <form onSubmit={this.submitHandler}>
                     <div>
-                        <input type="text" name="title" value={title} onChange={this.changeHandler} />
+                        <label>Add new book</label>
+                        <table>
+                            <tr><td align="right"><label>Title: </label></td>
+                                <td><input type="text" name="title" value={title} onChange={this.changeHandler} /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Author:</label></td>
+                                <td><input type="text" name="author" value={author} onChange={this.changeHandler} /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Price:</label></td>
+                                <td><input type="text" name="price" value={price} onChange={this.changeHandler} /></td>
+                            </tr>
+                        </table>
                     </div>
-                    <div>
-                        <input type="text" name="author" value={author} onChange={this.changeHandler} />
-                    </div>
-                    <div>
-                        <input type="text" name="price" value={price} onChange={this.changeHandler} />
-                    </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add New Book</button>
                 </form>
+                <BookComp />
             </div>
         )
     }
