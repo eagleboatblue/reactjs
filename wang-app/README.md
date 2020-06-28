@@ -24,7 +24,13 @@ BookTable    | Display book list
 EditBookForm | Edit existing book form
 AddBookForm  | Add new book form
 
-
+## Work flow
+* BookManager > useEffect() Effect Hooks load book list from MongoDB
+* Delete Book > user click delete button > deleteBook function will be called
+* Edit Book > user click Edit button > editRow will put current book into edit window
+* In Edit form > user click update buuton > updateBook will be called
+* Add Book > user click Add new book button > addBook function will be called
+* After each operation, getBooks() function will be called to reload book list from DB.
 
 ## Dependencies 
 * axios
