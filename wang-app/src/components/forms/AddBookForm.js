@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const AddBookForm = props => {
-	const initialFormState = { _id: null, title: '', author: '', price: '' }
+	const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
 	const [ book, setBook ] = useState(initialFormState)
 
 	const handleInputChange = event => {

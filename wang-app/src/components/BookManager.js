@@ -7,7 +7,7 @@ import BookTable from './tables/BookTable'
 const BookManager = () => {
 	// Data
 	const booksData = []
-	const initialFormState = { _id: null, title: '', author: '', price: '' }
+	const initialFormState = { _id: null, title: '', author: '', price: '' , read:false, rating:0}
 
 	// Setting state
 	const [ books, setBooks ] = useState(booksData)
@@ -21,6 +21,12 @@ const BookManager = () => {
 		}))
 	  }, []);
 
+	function getBooks() {
+		fetch('http://localhost:5000/books').then(response => 
+		  response.json().then(data => {
+		  setBooks(data.books);
+		}))	;	
+	}
 	  
 	// CRUD operations
 	const addBook = book => {
@@ -29,7 +35,8 @@ const BookManager = () => {
 		console.log("add: " + book)
         axios.post("http://localhost:5000/books", book)
             .then(response => {
-                console.log(response)
+				console.log(response)
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
@@ -41,7 +48,8 @@ const BookManager = () => {
 		console.log("deleteBook: " + _id)
         axios.delete("http://localhost:5000/books/" + _id)
             .then(response => {
-                console.log(response)
+				console.log(response)
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
@@ -59,7 +67,8 @@ const BookManager = () => {
 
 		axios.put("http://localhost:5000/books/" + _id, book)
             .then(response => {
-                console.log(response)
+				console.log(response)
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
