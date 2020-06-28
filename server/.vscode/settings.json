@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "S:/_practise/reactjs/server/Scripts/Python",
+    "python.pythonPath": "./env/bin/Python",
     "git.ignoreLimitWarning": true
 }
