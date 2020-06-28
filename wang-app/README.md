@@ -37,6 +37,17 @@ AddBookForm  | Add new book form
 ```
 npm install axios
 ```
+* pymongo
+```
+pip install pymongo
+```
+* flask & flask_cors (security)
+```
+pip install flask
+pip install flask_cors
+```
+
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
