@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 const EditBookForm = props => {
+	const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
   const [ book, setBook ] = useState(props.currentBook)
 
   useEffect(
     () => {
-      setBook(props.currentBook)
+      setBook(book)
+      
     },
     [ props ]
   )
@@ -21,7 +23,6 @@ const EditBookForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-
         props.updateBook(book._id, book)
       }}
     >

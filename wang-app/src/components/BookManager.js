@@ -78,7 +78,7 @@ const BookManager = () => {
 	const editRow = book => {
 		console.log("editRow: " + book._id)
 		setEditing(true)
-
+		console.log(book)
 		setCurrentBook({ _id: book._id, title: book.title, author: book.author, price: book.price })		
 	}
 
