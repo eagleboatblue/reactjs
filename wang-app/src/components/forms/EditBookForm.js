@@ -22,7 +22,7 @@ const EditBookForm = props => {
       onSubmit={event => {
         event.preventDefault()
 
-        props.updateBook(book.id, book)
+        props.updateBook(book._id, book)
       }}
     >
       <label>Title</label>

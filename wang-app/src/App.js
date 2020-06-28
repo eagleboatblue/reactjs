@@ -1,15 +1,10 @@
 import React from 'react';
-import './App.css';
-import './appStyles.css'
-// import BookManager from './components/BookManager'
-// import BooksControl from './components/BooksControl'
-// import BookComp from './components/BookComp'
-import PostForm from './components/PostForm'
+import BookManager from './components/BookManager'
 
 function App() {
   return (
     <div className="App">
-      <PostForm />
+      <BookManager />
     </div>
   );
 }

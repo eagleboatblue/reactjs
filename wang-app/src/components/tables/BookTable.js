@@ -13,7 +13,7 @@ const BookTable = props => (
     <tbody>
       {props.books.length > 0 ? (
         props.books.map(book => (
-          <tr key={book.id}>
+          <tr key={book._id}>
             <td>{book.title}</td>
             <td>{book.author}</td>
             <td>{book.price}</td>
@@ -27,7 +27,7 @@ const BookTable = props => (
                 Edit
               </button>
               <button
-                onClick={() => props.deleteBook(book.id)}
+                onClick={() => props.deleteBook(book._id)}
                 className="button muted-button"
               >
                 Delete
@@ -37,7 +37,7 @@ const BookTable = props => (
         ))
       ) : (
         <tr>
-          <td colSpan={3}>No books</td>
+          <td colSpan={3}>Sorry, No any book.</td>
         </tr>
       )}
     </tbody>

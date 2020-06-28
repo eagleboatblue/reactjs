@@ -1,4 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react'
+import axios from 'axios'
 import AddBookForm from './forms/AddBookForm'
 import EditBookForm from './forms/EditBookForm'
 import BookTable from './tables/BookTable'
@@ -6,8 +7,7 @@ import BookTable from './tables/BookTable'
 const BookManager = () => {
 	// Data
 	const booksData = []
-
-	const initialFormState = { id: null, title: '', author: '', price: '' }
+	const initialFormState = { _id: null, title: '', author: '', price: '' }
 
 	// Setting state
 	const [ books, setBooks ] = useState(booksData)
@@ -15,38 +15,65 @@ const BookManager = () => {
 	const [ editing, setEditing ] = useState(false)
 
 	useEffect(() => {
-		fetch('/books').then(response => 
+		fetch('http://localhost:5000/books').then(response => 
 		  response.json().then(data => {
 		  setBooks(data.books);
 		}))
 	  }, []);
 
+	  
 	// CRUD operations
 	const addBook = book => {
 		// book.id = books.length + 1
-
-		setBooks([ ...books, book ])
+		// setBooks([ ...books, book ])
+		console.log("add: " + book)
+        axios.post("http://localhost:5000/books", book)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+			})
 	}
 
-	const deleteBook = id => {
+	const deleteBook = _id => {
 		setEditing(false)
+		console.log("deleteBook: " + _id)
+        axios.delete("http://localhost:5000/books/" + _id)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+			})
 
-		setBooks(books.filter(book => book.id !== id))
+		//setBooks(books.filter(book => book.id !== _id))
 	}
 
-	const updateBook = (id, updatedBook) => {
-		setEditing(false)
+	const updateBook = (_id, book) => {
+		// setEditing(false)
+		// setBooks(books.map(book => (book.id === id ? updatedBook : book)))
 
-		setBooks(books.map(book => (book.id === id ? updatedBook : book)))
+		console.log("_id: " + _id)
+		console.log("updateBook id: " + book._id)
+
+		axios.put("http://localhost:5000/books/" + _id, book)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+			})
 	}
 
 	const editRow = book => {
+		console.log("editRow: " + book._id)
 		setEditing(true)
 
-		setCurrentBook({ id: book.id, title: book.title, author: book.author, price: book.price })
+		setCurrentBook({ _id: book._id, title: book.title, author: book.author, price: book.price })		
 	}
 
-	  return (
+	return (
 		<div className="container">
 			<h1>华夏中文学校-图书列表管理</h1>
 			<div className="flex-row">
