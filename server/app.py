@@ -1,5 +1,5 @@
 """
-Supported services:
+Supported Micro-Services (CRUD):
     * /books: (GET)get all books in MongoDB
     * /books/<_id> (GET): get specific book with _id
     * /books (POST) + book body: create a new book

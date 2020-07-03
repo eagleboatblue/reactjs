@@ -6,6 +6,7 @@
 .pnp.js
 /eb-flask
 *.pyc
+__pycache__/
 
 # testing
 /coverage

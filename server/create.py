@@ -1,3 +1,6 @@
+"""
+insert a sample book to MongoDB
+"""
 from pymongo import MongoClient
 import uuid
 
