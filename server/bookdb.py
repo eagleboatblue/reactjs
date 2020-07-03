@@ -1,3 +1,6 @@
+"""
+BookDB class provide all CRUD database access.
+"""
 from pymongo import MongoClient
 import json
 import uuid
