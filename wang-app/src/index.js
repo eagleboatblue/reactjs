@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import {Router} from 'react-router-dom';
-import Main from './Main';
 import {createBrowserHistory} from 'history'
 // import App from './App';
 import * as serviceWorker from './serviceWorker';

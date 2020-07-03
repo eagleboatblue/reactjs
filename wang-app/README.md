@@ -4,6 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To Start this appliction
 ```
+cd server
+.\env\Scrips\Activat.bat
+python app.py
+```
+Check MongoDB server in Windows.
+  - running application (MongoD).
+  - running in service.
+
+```
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -41,6 +50,7 @@ npm install axios
 ```
 pip install pymongo
 ```
+
 * flask & flask_cors (security)
 ```
 pip install flask
