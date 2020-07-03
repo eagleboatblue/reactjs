@@ -9,8 +9,8 @@ npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Application File Structures
-* public > index.html (Application Title; <div id="root">)
-* src/index.js > src/Main/index.js > src/App.js > src/components/BookManager
+* public > index.html (Application Title; \<div id="root"\> )
+* src/index.js >  src/App.js > src/components/BookManager
 * BookManager > Uses (AddBookForm; EditBookForm; BookTable)
 * src/forms/AddBookForm
 * src/forms/EditBookForm
