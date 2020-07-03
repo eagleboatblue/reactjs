@@ -3,7 +3,7 @@ import Popup from "reactjs-popup";
 import AddBookForm from "./forms/AddBookForm";
  
 export default (props) => (
-  <Popup trigger={<button>Add New Book</button>} position="top left">
+  <Popup trigger={<button>Add New Book</button>}>
       {close => (
       <div>
         <AddBookForm addBook={props.addBook}/>

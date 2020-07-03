@@ -73,3 +73,6 @@ Popup window
 npm install reactjs-popup
 
 ```
+
+## References
+[Smart Table](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)

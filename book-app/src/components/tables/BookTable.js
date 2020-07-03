@@ -3,7 +3,7 @@ import React from 'react'
 const BookTable = props => (
   <table>
     <thead>
-      <tr>
+      <tr bgcolor="lightblue">
         <th>Title</th>
         <th>Author</th>
         <th>Price</th>
@@ -13,7 +13,7 @@ const BookTable = props => (
     <tbody>
       {props.books.length > 0 ? (
         props.books.map(book => (
-          <tr key={book._id}>
+          <tr key={book._id} >
             <td>{book.title}</td>
             <td>{book.author}</td>
             <td>{book.price}</td>
@@ -22,13 +22,13 @@ const BookTable = props => (
                 onClick={() => {
                   props.editRow(book)
                 }}
-                className="button muted-button"
-              >
+                class="btn btn-warning"
+               >
                 Edit
               </button>
               <button
                 onClick={() => props.deleteBook(book._id)}
-                className="button muted-button"
+                class="btn btn-danger"
               >
                 Delete
               </button>

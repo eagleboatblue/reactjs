@@ -1,0 +1,11 @@
+warning {
+    border-radius: 5px;
+    background-color: yellow;
+    color:black;
+}
+
+.danger {
+    border-radius: 5px;
+    background-color: red;
+    color:white;
+}

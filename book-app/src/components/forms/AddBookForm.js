@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import styles from "./wang.css"
 
 const AddBookForm = props => {
 	const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
@@ -27,7 +27,7 @@ const AddBookForm = props => {
 			<input type="text" name="author" value={book.author} onChange={handleInputChange} />
 			<label>Price</label>
 			<input type="text" name="price" value={book.price} onChange={handleInputChange} />
-			<button>Add new book</button>
+			<button className={styles.danger}>Add new book</button>
 		</form>
 	)
 }
