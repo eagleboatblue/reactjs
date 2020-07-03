@@ -3,6 +3,7 @@ import axios from 'axios'
 import AddBookForm from './forms/AddBookForm'
 import EditBookForm from './forms/EditBookForm'
 import BookTable from './tables/BookTable'
+import Popup from './Popup'
 
 const BookManager = () => {
 	// Data
@@ -85,8 +86,11 @@ const BookManager = () => {
 	return (
 		<div className="container">
 			<h1>华夏中文学校-图书列表管理</h1>
+			<div>
+				<Popup addBook={addBook}/>
+			</div>
 			<div className="flex-row">
-				<div className="flex-large">
+				{/* <div className="flex-large">
 					{editing ? (
 						<Fragment>
 							<h2>Edit book</h2>
@@ -103,7 +107,7 @@ const BookManager = () => {
 							<AddBookForm addBook={addBook} />
 						</Fragment>
 					)}
-				</div>
+				</div> */}
 				<div className="flex-large">
 					<h2>View books</h2>
 					<BookTable books={books} editRow={editRow} deleteBook={deleteBook} />
