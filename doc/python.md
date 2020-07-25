@@ -10,9 +10,10 @@
 
 ### For Windows
 ```sh
-C:\_prectise\reactjs\wang-app\server>python -m venv envflask
-C:\_prectise\reactjs\wang-app\server\envflask\Scripts>.\activate.bat
-(envflask) C:\_prectise\reactjs\wang-app\server>pip install flask
-(envflask) C:\_prectise\reactjs\wang-app\server>python app.py
-(envflask) C:\_prectise\reactjs\wang-app\server>pip install pymongo
+C:\_prectise\reactjs\server>python -m venv env
+C:\_prectise\reactjs\server\.\env\Scripts\activate.bat
+(env) C:\_prectise\reactjs\server>pip install flask
+(env) C:\_prectise\reactjs\server>pip install flask_cors
+(env) C:\_prectise\reactjs\server>pip install pymongo
+(env) C:\_prectise\reactjs\server>python app.py
 ```

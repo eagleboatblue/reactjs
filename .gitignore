@@ -28,4 +28,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-envflask/
+.vscode/
+
+/wang-app/node_modules
+/wang-app/server/envflask
