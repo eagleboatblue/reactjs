@@ -36,7 +36,7 @@ print(df.tail())
 #and showcase the increasing or decreasing trend of stocks price.
 #Let’s start code out the Rolling Mean (Moving Average) — to determine trend
 close_px = df['Adj Close']
-mavg = close_px.rolling(window=20).mean()
+mavg = close_px.rolling(window=20).mean().shift(-10)
 #print(mavg)
 
 mpl.rc('figure', figsize=(8, 7))
